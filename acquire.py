@@ -29,11 +29,14 @@ def new_telco_data():
     sql_query = '''
     SELECT *
     FROM customers
-    JOIN contract_types using(contract_type_id)
-    JOIN payment_types using(payment_type_id)
-    JOIN internet_service_types using(internet_service_type_id)
+    JOIN contract_types USING (contract_type_id)
+    JOIN payment_types USING (payment_type_id)
+    JOIN internet_service_types USING (internet_service_type_id)
     '''
-    return pd.read_sql(sql_query, get_connection('telco_churn'))
+    # Read in DataFrame from Codeup db.
+    df = pd.read_sql(sql_query, get_connection('telco_churn'))
+    
+    return df
 
 def get_telco_data():
     '''
