@@ -40,7 +40,7 @@ def prep_telco_data(df):
     df.paperless_billing = df.paperless_billing.replace({'Yes': 1, 'No': 0})
     df.churn = df.churn.replace({'Yes': 1, 'No': 0})
     df.contract_type = df.contract_type.replace({'Month-to-month': 0, 'One year': 1, 'Two year': 2})
-    df.payment_type = df.payment_type.replace({'Mailed check': 0, 'Credit card (automatic)': 1, 'Bank transfer (automatic)': 1, 'Bank transfer (automatic)': 1, 'Electronic check': 0})
+    df.payment_type = df.payment_type.replace({'Mailed check': 0, 'Credit card (automatic)': 1, 'Bank transfer (automatic)': 1,  'Electronic check': 0})
    
     
     # Combine simliar columns and drop the individual ones
